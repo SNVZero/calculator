@@ -1,0 +1,16 @@
+:root{
+    --color1: #485461;
+    --color2: #28313b;
+}
+
+body {
+    background: var(--color1);
+background: -moz-linear-gradient(left, var(--color1)  1%, var(--color2) 100%);
+background: -webkit-linear-gradient(left,  var(--color1) 1%,var(--color2) 100%);
+background: linear-gradient(to right,  var(--color1)1%,var(--color2)100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=var(--color1), endColorstr=var(--color2),GradientType=1 );
+
+}
+#out,.rub {
+    font-size: 30px;
+}
