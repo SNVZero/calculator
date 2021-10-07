@@ -1,4 +1,5 @@
-var btn = document.querySelector('#btn'),
+var
+btn = document.querySelector('#btn'),
 out = document.querySelector('#out'),
 weight = document.querySelector('#weight'),
 vol = document.querySelector('#vol'),
@@ -12,14 +13,19 @@ vol = document.querySelector('#vol');
 var sum = (weight.value *vol.value );
 if (isNaN(sum)) {
   alert('Введите числовое значение');
-}else{
+}
+else if(weight.value <=0 || vol.value <=0){
+  alert('Число отрицательное или равно нулю')
+}
+else{
   out.innerHTML = sum;
   }
-
-    }else{
+}
+    else{
   alert('Введите цену товари и количество');
 }
 
 }
+
 
 document.addEventListener("DOMContentLoaded", ready);
