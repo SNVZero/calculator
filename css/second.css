@@ -14,3 +14,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=var(--color1),
 #out,.rub {
     font-size: 30px;
 }
+.warning {
+    border-color: red;
+    border-width: 3px;
+  }

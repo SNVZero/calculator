@@ -4,28 +4,34 @@ out = document.querySelector('#out'),
 weight = document.querySelector('#weight'),
 vol = document.querySelector('#vol'),
 weight = document.querySelector('#weight'),
-vol = document.querySelector('#vol');
-
-
+vol = document.querySelector('#vol'),
+regexConst=(/^\d{1,}$/);
   btn.onclick = function(){
+var price=weight.value,
+kol=vol.value;
 
-    if (weight.value != '' && vol.value != '') {
-var sum = (weight.value *vol.value );
-if (isNaN(sum)) {
-  alert('Введите числовое значение');
-}
-else if(weight.value <=0 || vol.value <=0){
-  alert('Число отрицательное или равно нулю')
-}
+ if (!(regexConst.test(price)) || !(regexConst.test(kol))) {
+   if (!(regexConst.test(price))&&(regexConst.test(kol))) {
+     alert("Не верно указана цена товара")
+     weight.classList.add("warning");
+     weight.focus();
+     setTimeout(()=>weight.classList.remove("warning"),5000);
+     } else if ((regexConst.test(price))&&!(regexConst.test(kol))) {
+      alert("Не верно указано количество товаров")
+      vol.classList.add("warning");
+      vol.focus();
+      setTimeout(()=>vol.classList.remove("warning"),5000);
+   } else if (!(regexConst.test(price)) && !(regexConst.test(kol))) {
+    alert("Не верно указана цена и количество товаров")
+    vol.classList.add("warning");
+    setTimeout(()=>vol.classList.remove("warning"),5000);
+    weight.classList.add("warning");
+    setTimeout(()=>weight.classList.remove("warning"),5000);
+   }
+ }
 else{
-  out.innerHTML = sum;
+  out.innerHTML = (weight.value*vol.value);
   }
 }
-    else{
-  alert('Введите цену товари и количество');
-}
-
-}
-
 
 document.addEventListener("DOMContentLoaded", ready);
