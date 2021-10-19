@@ -11,10 +11,7 @@ background: linear-gradient(to right,  var(--color1)1%,var(--color2)100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=var(--color1), endColorstr=var(--color2),GradientType=1 );
 
 }
-#out,.rub {
+#out,#out1,.rub {
     font-size: 30px;
 }
-.warning {
-    border-color: red;
-    border-width: 3px;
-  }
+
